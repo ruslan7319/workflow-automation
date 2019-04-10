@@ -1,0 +1,97 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_0161J8HT8C8FK0bPGuCFmz6w7SzEs1OOnwx",
+    "name": "RUSLAN_GCP_ACCOUNT-LATEST",
+    "title": "RUSLAN_GCP_ACCOUNT-LATEST",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "RuslanGoogleAccountName",
+          "scope": "input",
+          "name": "GoogleAccountName",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_0161J8IUV3PU32fdQ2GHcuIpo9P6Hike1jo",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "true",
+          "scope": "local",
+          "name": "respons-true",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_0161J8IUV2PQI4BwviQMH0L4D2SZTqugi6K",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "false",
+          "scope": "local",
+          "name": "responds-false",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_0161J8IUV36422nXYTKpXXwGM85BMXwZBOf",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Yes",
+          "scope": "input",
+          "name": "TargetGroup_ChildWorkflow",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_016CK8TE0U0WA4s5oDTCoKtcgqF8pigOYqK",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": true,
+          "scope": "local",
+          "name": "LocalTrue",
+          "type": "datatype.boolean"
+        },
+        "unique_name": "variable_workflow_0161J8IUV3D6R2HfC7mvzah2gQy1JyDcRDs",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "local",
+          "name": "localFalse",
+          "type": "datatype.boolean"
+        },
+        "unique_name": "variable_workflow_0161J8IUV3JNS5DwDUSwA0Wvdqasa5auZt8",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "test",
+      "display_name": "RUSLAN_GCP_ACCOUNT-LATEST",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      },
+      "timeout": 3600
+    },
+    "object_type": "definition_workflow",
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
