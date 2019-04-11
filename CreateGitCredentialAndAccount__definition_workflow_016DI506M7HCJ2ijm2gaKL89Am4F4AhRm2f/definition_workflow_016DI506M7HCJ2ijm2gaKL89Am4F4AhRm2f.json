@@ -7,6 +7,28 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "scope": "input",
+          "name": "GitPassword",
+          "type": "datatype.secure_string",
+          "description": "your account gitHup password"
+        },
+        "unique_name": "variable_workflow_016EAXF3KS5IR6kERD4vZxbSlagsL1WWJ65",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": true,
+          "scope": "local",
+          "name": "RequestPass",
+          "type": "datatype.boolean"
+        },
+        "unique_name": "variable_workflow_016EB62LZ2N861GzrNr3HKhLiKJXthnuv0W",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.string",
         "properties": {
           "value": "api.github.com/repos/ruslan7319/workflow-automation",
@@ -16,17 +38,6 @@
           "description": "Path to your repository can be change "
         },
         "unique_name": "variable_workflow_016EBG56APGQA1B4aLobefY1AINDTtLhK6d",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.secure_string",
-        "properties": {
-          "scope": "input",
-          "name": "GitPassword",
-          "type": "datatype.secure_string",
-          "description": "your account gitHup password"
-        },
-        "unique_name": "variable_workflow_016EAXF3KS5IR6kERD4vZxbSlagsL1WWJ65",
         "object_type": "variable_workflow"
       },
       {
@@ -41,17 +52,6 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.secure_string",
-        "properties": {
-          "scope": "input",
-          "name": "git_login",
-          "type": "datatype.secure_string",
-          "description": "your account githup login name"
-        },
-        "unique_name": "variable_workflow_016EAX1WSD3EF1rmqmQyrvvCmslNBoKJpXX",
-        "object_type": "variable_workflow"
-      },
-      {
         "schema_id": "datatype.boolean",
         "properties": {
           "value": false,
@@ -63,14 +63,14 @@
         "object_type": "variable_workflow"
       },
       {
-        "schema_id": "datatype.boolean",
+        "schema_id": "datatype.secure_string",
         "properties": {
-          "value": true,
-          "scope": "local",
-          "name": "RequestPass",
-          "type": "datatype.boolean"
+          "scope": "input",
+          "name": "git_login",
+          "type": "datatype.secure_string",
+          "description": "your account githup login name"
         },
-        "unique_name": "variable_workflow_016EB62LZ2N861GzrNr3HKhLiKJXthnuv0W",
+        "unique_name": "variable_workflow_016EAX1WSD3EF1rmqmQyrvvCmslNBoKJpXX",
         "object_type": "variable_workflow"
       },
       {
@@ -90,10 +90,10 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "git_repo_id",
+          "name": "git_account_id",
           "type": "datatype.string"
         },
-        "unique_name": "variable_workflow_016EC05IRTWYH2PXWuymQVvklzvZVaGjeqY",
+        "unique_name": "variable_workflow_016EBZU22FU4Y110ieQ60JOYQGfIv1RNxNL",
         "object_type": "variable_workflow"
       },
       {
@@ -101,10 +101,10 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "git_account_id",
+          "name": "git_repo_id",
           "type": "datatype.string"
         },
-        "unique_name": "variable_workflow_016EBZU22FU4Y110ieQ60JOYQGfIv1RNxNL",
+        "unique_name": "variable_workflow_016EC05IRTWYH2PXWuymQVvklzvZVaGjeqY",
         "object_type": "variable_workflow"
       }
     ],
@@ -113,6 +113,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
+      "description": "latest update",
       "display_name": "Ruslan-Validate and Craete Git Hup",
       "favorite": false,
       "target": {
