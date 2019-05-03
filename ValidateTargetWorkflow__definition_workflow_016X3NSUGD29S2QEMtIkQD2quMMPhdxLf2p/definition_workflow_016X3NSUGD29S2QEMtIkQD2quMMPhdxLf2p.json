@@ -1,0 +1,164 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_016X3NSUGD29S2QEMtIkQD2quMMPhdxLf2p",
+    "name": "ValidateIfIFTyargetExists - PLEASE DO NOT MODIFY",
+    "title": "ValidateIfIFTyargetExists - PLEASE DO NOT MODIFY",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "output",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_016X4404J8XUF17bzuZmeSxd5AxRuyojT94",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Target_Name",
+          "type": "datatype.string",
+          "description": "AMQP,MERAKI,GCP"
+        },
+        "unique_name": "variable_workflow_016X3R3XBI45V1ww89wwBpVvbmX0rpgvodj",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "ValidateIfIFTyargetExists - PLEASE DO NOT MODIFY",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_016X3OYRQVIJ36QKvbvhmPPnGYbzwAx4JbE",
+        "name": "Generic CCS API Request",
+        "title": "Generic CCS API Request",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_call_method": "GET",
+          "continue_on_failure": true,
+          "display_name": "Generic CCS API Request",
+          "relative_url": "/be-console/api/v1/targets",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_016X3S6A43TCL62fs2bNKaLYufkFdr3kM4E",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Condition Block"
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_016X3S6DMJUPR6V1Bhx6vybLAuUy1bOXoSC",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_016X3OYRQVIJ36QKvbvhmPPnGYbzwAx4JbE.output.succeeded$",
+                "operator": "eq",
+                "right_operand": true
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_016X3R8SOSG8X0RYqRlti28IOKkii7vn2OG",
+                "name": "JSONPath Query",
+                "title": "JSONPath Query",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "JSONPath Query",
+                  "input_json": "$activity.definition_activity_016X3OYRQVIJ36QKvbvhmPPnGYbzwAx4JbE.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$..[?(@.name == '$workflow.definition_workflow_016X3NSUGD29S2QEMtIkQD2quMMPhdxLf2p.input.variable_workflow_016X3R3XBI45V1ww89wwBpVvbmX0rpgvodj$')].id",
+                      "jsonpath_query_name": "target_id",
+                      "jsonpath_query_type": "string",
+                      "zdate_type_format": ""
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_016X3S6EXAA315nyfwtMzdLdjftlHATLSjT",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_016X3OYRQVIJ36QKvbvhmPPnGYbzwAx4JbE.output.succeeded$",
+                "operator": "eq",
+                "right_operand": false
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_016X3SZ1BWTUI2hrwsh37Vqp4qE5Woe2j7W",
+                "name": "Failed",
+                "title": "Completed",
+                "type": "logic.completed",
+                "base_type": "activity",
+                "properties": {
+                  "completion_type": "failed-completed",
+                  "display_name": "Failed",
+                  "result_message": "get /targets API not working"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
