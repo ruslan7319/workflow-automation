@@ -10,23 +10,23 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "output",
-          "name": "output",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_016X4404J8XUF17bzuZmeSxd5AxRuyojT94",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
           "scope": "input",
           "name": "Target_Name",
           "type": "datatype.string",
           "description": "AMQP,MERAKI,GCP"
         },
         "unique_name": "variable_workflow_016X3R3XBI45V1ww89wwBpVvbmX0rpgvodj",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "output",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_016X4404J8XUF17bzuZmeSxd5AxRuyojT94",
         "object_type": "variable_workflow"
       }
     ],
@@ -115,6 +115,24 @@
                       "jsonpath_query_name": "target_id",
                       "jsonpath_query_type": "string",
                       "zdate_type_format": ""
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_016X47HMEQM5W0MhBcrOVZpNDNMnkfGjk5a",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_016X3NSUGD29S2QEMtIkQD2quMMPhdxLf2p.output.variable_workflow_016X4404J8XUF17bzuZmeSxd5AxRuyojT94$",
+                      "variable_value_new": "$activity.definition_activity_016X3R8SOSG8X0RYqRlti28IOKkii7vn2OG.output.jsonpath_queries.target_id$"
                     }
                   ]
                 },
