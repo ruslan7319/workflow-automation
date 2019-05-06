@@ -13,7 +13,8 @@
           "scope": "input",
           "name": "Target_Name",
           "type": "datatype.string",
-          "description": "AMQP,MERAKI,GCP"
+          "description": "AMQP,MERAKI,GCP",
+          "is_required": false
         },
         "unique_name": "variable_workflow_016X3R3XBI45V1ww89wwBpVvbmX0rpgvodj",
         "object_type": "variable_workflow"
@@ -24,7 +25,8 @@
           "value": "",
           "scope": "output",
           "name": "output",
-          "type": "datatype.string"
+          "type": "datatype.string",
+          "is_required": false
         },
         "unique_name": "variable_workflow_016X4404J8XUF17bzuZmeSxd5AxRuyojT94",
         "object_type": "variable_workflow"
@@ -111,7 +113,7 @@
                   "input_json": "$activity.definition_activity_016X3OYRQVIJ36QKvbvhmPPnGYbzwAx4JbE.output.response_body$",
                   "jsonpath_queries": [
                     {
-                      "jsonpath_query": "$..[?(@.name == '$workflow.definition_workflow_016X3NSUGD29S2QEMtIkQD2quMMPhdxLf2p.input.variable_workflow_016X3R3XBI45V1ww89wwBpVvbmX0rpgvodj$')].id",
+                      "jsonpath_query": "$..[?(@.name =~ /$workflow.definition_workflow_016X3NSUGD29S2QEMtIkQD2quMMPhdxLf2p.input.variable_workflow_016X3R3XBI45V1ww89wwBpVvbmX0rpgvodj$.*?/i)].id",
                       "jsonpath_query_name": "target_id",
                       "jsonpath_query_type": "string",
                       "zdate_type_format": ""
@@ -127,7 +129,7 @@
                 "type": "core.set_multiple_variables",
                 "base_type": "activity",
                 "properties": {
-                  "continue_on_failure": false,
+                  "continue_on_failure": true,
                   "display_name": "Set Variables",
                   "variables_to_update": [
                     {
@@ -152,7 +154,7 @@
                 "operator": "eq",
                 "right_operand": false
               },
-              "continue_on_failure": false,
+              "continue_on_failure": true,
               "display_name": "Condition Branch"
             },
             "object_type": "definition_activity",
