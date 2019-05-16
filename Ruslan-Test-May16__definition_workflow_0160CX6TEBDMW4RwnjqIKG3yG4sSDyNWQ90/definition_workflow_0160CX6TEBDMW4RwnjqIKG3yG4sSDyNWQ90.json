@@ -1,0 +1,90 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_0160CX6TEBDMW4RwnjqIKG3yG4sSDyNWQ90",
+    "name": "123",
+    "title": "123",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "123",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      },
+      "timeout": 3600
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0160CXCHANTS13Dw9zXdGMfeWWCbDPjZWe2",
+        "name": "RUSLAN-COMMIT-WORKFLOW 1",
+        "title": "RUSLAN-COMMIT-WORKFLOW 1",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "atomic": {
+            "atomic_group": "Atomic Workflows",
+            "is_atomic": true
+          },
+          "continue_on_failure": false,
+          "delete_workflow_instance": false,
+          "display_name": "RUSLAN-COMMIT-WORKFLOW 1",
+          "favorite": false,
+          "input": {},
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "override_workflow_target": false,
+            "specify_on_workflow_start": false
+          },
+          "timeout": 3600,
+          "workflow_id": "definition_workflow_015TWONLDNXK324TAw8nyBB3bGorXolAM4N"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_0160CXIWSVOMD2edv1IZKIdHp8ExezgPd3x",
+        "name": "RUSLAN-COMMIT-WORKFLOW 1",
+        "title": "RUSLAN-COMMIT-WORKFLOW 1",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "atomic": {
+            "atomic_group": "Atomic Workflows",
+            "is_atomic": true
+          },
+          "continue_on_failure": false,
+          "delete_workflow_instance": false,
+          "display_name": "RUSLAN-COMMIT-WORKFLOW 1",
+          "favorite": false,
+          "input": {},
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "override_workflow_target": false,
+            "specify_on_workflow_start": false
+          },
+          "timeout": 3600,
+          "workflow_id": "definition_workflow_015TWONLDNXK324TAw8nyBB3bGorXolAM4N"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "atomic_workflows": [
+    "definition_workflow_015TWONLDNXK324TAw8nyBB3bGorXolAM4N"
+  ]
+}
